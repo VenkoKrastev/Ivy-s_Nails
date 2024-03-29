@@ -1,16 +1,12 @@
-﻿using Ivy_s_Nails.Data.Models;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore;
-
-namespace Ivy_s_Nails.Data
+﻿namespace IvysNails.Data
 {
+    using IvysNails.Data.Models;
+    using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+    using Microsoft.EntityFrameworkCore;
     public class ApplicationDbContext : IdentityDbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
-            : base(options)
-        {
-
-        }
+            : base(options) { }
 
         public DbSet<Appointment> Appointments { get; set; } = null!;
         public DbSet<Product> Products { get; set; } = null!;

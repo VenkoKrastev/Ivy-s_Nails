@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
-using static Ivy_s_Nails.Data.DataConstants;
+using static IvysNails.Data.DataConstants;
 
 
-namespace Ivy_s_Nails.Data.Models
+namespace IvysNails.Data.Models
 {
     public class Service
     {

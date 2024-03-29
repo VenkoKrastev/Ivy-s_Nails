@@ -1,4 +1,4 @@
-﻿namespace Ivy_s_Nails.Data
+﻿namespace IvysNails.Data
 {
     public static class DataConstants
     {
