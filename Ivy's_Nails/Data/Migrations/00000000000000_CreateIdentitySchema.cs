@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
 
-namespace Ivy_s_Nails.Data.Migrations
+namespace IvysNails.Data.Migrations
 {
     public partial class CreateIdentitySchema : Migration
     {

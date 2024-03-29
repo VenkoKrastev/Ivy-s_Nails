@@ -4,8 +4,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <UserSecretsId>aspnet-Ivy_s_Nails-e035303a-e08a-4673-8aad-bb79b5ee60d1</UserSecretsId>
-    <RootNamespace>Ivy_s_Nails</RootNamespace>
+    <UserSecretsId>aspnet-IvysNails-e035303a-e08a-4673-8aad-bb79b5ee60d1</UserSecretsId>
+    <RootNamespace>IvysNails</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
