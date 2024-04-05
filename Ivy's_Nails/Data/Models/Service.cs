@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using static IvysNails.Data.DataConstants;
 
 
@@ -20,6 +21,12 @@ namespace IvysNails.Data.Models
         [Precision(18, 2)]
         [Comment("The price of current service")]
         public decimal Price { get; set; }
-        
+
+        [Required]
+        public int CustomerId { get; set; }
+
+        [ForeignKey(nameof(CustomerId))]
+        public Customer Customers { get; set; } = null!;
+
     }
 }

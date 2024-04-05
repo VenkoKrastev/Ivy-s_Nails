@@ -6,6 +6,7 @@ namespace IvysNails.Data.Models
 {
     public class Customer
     {
+        [Key]
         public int Id { get; set; }
 
         [Required]
@@ -16,6 +17,7 @@ namespace IvysNails.Data.Models
         [MaxLength(CustomerPhoneNumberMaxLength)]
         public string CustomerPhoneNumber { get; set; } = null!;
 
+        [Required]
         public string Email { get; set; } = null!;
     }
 }

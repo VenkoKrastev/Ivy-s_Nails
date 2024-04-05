@@ -1,6 +1,7 @@
 ﻿using IvysNails.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using static IvysNails.Data.DataConstants;
 
 namespace IvysNails.Data.Models
@@ -34,6 +35,12 @@ namespace IvysNails.Data.Models
         [StringLength(ProductImageUrlMaxLength)]
         [Comment("The current picture of product")]
         public string ImageUrl { get; set; } = null!;
+
+        [Required]
+        public int ProductCategoryId { get; set; }
+
+        [ForeignKey(nameof(ProductCategoryId))]
+        public ProductCategory ProductsCategories { get; set; } = null!;
 
         public ICollection<ProductCart> ProductsCarts { get; set; } = new HashSet<ProductCart>();
 
