@@ -22,11 +22,5 @@ namespace IvysNails.Data.Models
         [Comment("The price of current service")]
         public decimal Price { get; set; }
 
-        [Required]
-        public int CustomerId { get; set; }
-
-        [ForeignKey(nameof(CustomerId))]
-        public Customer Customers { get; set; } = null!;
-
     }
 }

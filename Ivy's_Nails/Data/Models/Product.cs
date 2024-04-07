@@ -42,8 +42,6 @@ namespace IvysNails.Data.Models
         [ForeignKey(nameof(ProductCategoryId))]
         public ProductCategory ProductsCategories { get; set; } = null!;
 
-        public ICollection<ProductCart> ProductsCarts { get; set; } = new HashSet<ProductCart>();
-
 
     }
 }
