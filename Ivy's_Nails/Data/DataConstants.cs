@@ -23,7 +23,8 @@
         public const int ServiceNameMinLength = 5;
         public const int ServiceNameMaxLength = 30;
 
-
+        public const int ProductCategoryMinLength = 3;
+        public const int ProductCategoryMaxLength = 50;
 
     }
 }

@@ -44,7 +44,7 @@ namespace IvysNails.Data.Migrations
 
                     b.HasIndex("CustomerId");
 
-                    b.ToTable("Appointments");
+                    b.ToTable("Appointments", (string)null);
                 });
 
             modelBuilder.Entity("IvysNails.Data.Models.Cart", b =>
@@ -65,7 +65,7 @@ namespace IvysNails.Data.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Carts");
+                    b.ToTable("Carts", (string)null);
                 });
 
             modelBuilder.Entity("IvysNails.Data.Models.Customer", b =>
@@ -92,7 +92,7 @@ namespace IvysNails.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Customer");
+                    b.ToTable("Customer", (string)null);
                 });
 
             modelBuilder.Entity("IvysNails.Data.Models.Product", b =>
@@ -138,7 +138,7 @@ namespace IvysNails.Data.Migrations
 
                     b.HasIndex("ProductCategoryId");
 
-                    b.ToTable("Products");
+                    b.ToTable("Products", (string)null);
                 });
 
             modelBuilder.Entity("IvysNails.Data.Models.ProductCart", b =>
@@ -155,7 +155,7 @@ namespace IvysNails.Data.Migrations
 
                     b.HasIndex("CartId");
 
-                    b.ToTable("ProductsCarts");
+                    b.ToTable("ProductsCarts", (string)null);
                 });
 
             modelBuilder.Entity("IvysNails.Data.Models.ProductCategory", b =>
@@ -175,7 +175,7 @@ namespace IvysNails.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("ProductCategory");
+                    b.ToTable("ProductCategory", (string)null);
                 });
 
             modelBuilder.Entity("IvysNails.Data.Models.Service", b =>
@@ -200,7 +200,7 @@ namespace IvysNails.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Services");
+                    b.ToTable("Services", (string)null);
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
