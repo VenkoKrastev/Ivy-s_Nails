@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace IvysNails.Data.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(IvyNailsDbContext))]
     [Migration("20240405164931_AddCategory")]
     partial class AddCategory
     {

@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace IvysNails.Data.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
+    [DbContext(typeof(IvyNailsDbContext))]
     [Migration("20240329170503_InitialMigration")]
     partial class InitialMigration
     {
