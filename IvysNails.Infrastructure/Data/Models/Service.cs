@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using static IvysNails.Data.DataConstants;
 
 
-namespace IvysNails.Data.Models
+namespace IvysNails.Infrastructure.Data.Models
 {
     public class Service
     {

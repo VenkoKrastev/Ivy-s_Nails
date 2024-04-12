@@ -1,10 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using static IvysNails.Data.DataConstants;
 
 
-namespace IvysNails.Data.Models
+namespace IvysNails.Infrastructure.Data.Models
 {
     public class Appointment
     {
@@ -30,3 +29,4 @@ namespace IvysNails.Data.Models
         public Customer Customer { get; set; } = null!;
     }
 }
+

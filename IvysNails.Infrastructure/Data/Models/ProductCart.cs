@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace IvysNails.Data.Models
+namespace IvysNails.Infrastructure.Data.Models
 {
     public class ProductCart
     {

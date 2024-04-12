@@ -2,7 +2,7 @@
 using System.ComponentModel.DataAnnotations;
 using static IvysNails.Data.DataConstants;
 
-namespace IvysNails.Data.Models
+namespace IvysNails.Infrastructure.Data.Models
 {
     public class ProductCategory
     {
