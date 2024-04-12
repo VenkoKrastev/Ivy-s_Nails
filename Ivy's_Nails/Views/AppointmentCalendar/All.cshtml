@@ -1,0 +1,38 @@
+﻿@using IvysNails.Models
+@model AppointmentViewModels
+@{
+    ViewBag.Title = "All free hour";
+}
+
+
+<h2 class="text-center">@ViewBag.Title</h2>
+<hr />
+
+<div class="text-center row">
+    
+        <div class="card col-4" style="width: 20rem; ">
+            <div class="card-body">
+                <h4 class="card-title mt-1">@Model.ServiceId</h4>
+                <h5 class="card-title mt-1">@Model.CustomerId</h5>
+                <h5 class="card-title mt-1">@Model.Date</h5>
+                <p class="mb-0"><span class="fw-bold">Starting Time: </span>@Model.Date</p>
+            </div>
+
+            <a asp-controller="CalendarController" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-warning mb-2 w-100 p-3 fw-bold">Info</a>
+            @if (User?.Identity?.Name == Model.CustomerId)
+            {
+                <a asp-controller="AppointmentCallendar" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning mb-2 w-100 p-3 fw-bold">Edit</a>
+            }
+            else
+            {
+                <form class="input-group-sm" asp-controller="CalendarController" asp-action="Join" asp-route-id="@Model.Id">
+                    <input type="submit" value="Subscribe" class="fs-6 btn btn-warning mb-2 w-100 p-3 fw-bold" />
+                </form>
+            }
+        </div>
+   
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

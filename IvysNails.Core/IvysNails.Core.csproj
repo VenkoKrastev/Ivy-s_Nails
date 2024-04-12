@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\IvysNails.Infrastructure\IvysNails.Infrastructure.csproj" />
+  </ItemGroup>
+
 </Project>

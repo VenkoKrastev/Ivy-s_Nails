@@ -1,4 +1,4 @@
-﻿using IvysNails.Data;
+﻿using IvysNails.Infrastructure.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 

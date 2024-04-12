@@ -22,7 +22,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Views\Product\" />
+    <ProjectReference Include="..\IvysNails.Core\IvysNails.Core.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using IvysNails.Infrastructure.Data;
+using IvysNails.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace IvysNails.Controllers
 {
@@ -6,7 +8,7 @@ namespace IvysNails.Controllers
     {
         private Dictionary<DateTime, string> calendar = new Dictionary<DateTime, string>();
 
-        public CalendarController()
+        public CalendarController(IvyNailsDbContext context)
         {
             // Initialization of the calendar with free hours from 09:00 to 18:00
             DateTime startTime = DateTime.Today.AddHours(9);
@@ -16,6 +18,7 @@ namespace IvysNails.Controllers
             {
                 calendar.Add(time, "Available");
             }
+
         }
 
         public ActionResult ViewCalendar()
@@ -37,5 +40,6 @@ namespace IvysNails.Controllers
 
             return RedirectToAction("ViewCalendar");
         }
+
     }
 }

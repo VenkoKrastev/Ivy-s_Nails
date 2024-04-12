@@ -1,4 +1,5 @@
 ﻿using Ivy_s_Nails.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -13,16 +14,22 @@ namespace Ivy_s_Nails.Controllers
             _logger = logger;
         }
 
-        public IActionResult Index()
+        [AllowAnonymous]
+        public IActionResult Index(int statusCode)
         {
+            if (statusCode == 400)
+            {
+                return View("Error400");
+            }
+
+            if (statusCode == 401)
+            {
+                return View("Error401");
+            }
             return View();
         }
 
-        public IActionResult Privacy()
-        {
-            return View();
-        }
-
+        [AllowAnonymous]
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
