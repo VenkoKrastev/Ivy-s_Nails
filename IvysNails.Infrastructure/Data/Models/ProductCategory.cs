@@ -15,5 +15,7 @@ namespace IvysNails.Infrastructure.Data.Models
         [Comment("The Name of product category")]
         public string Name { get; set; } = null!;
 
+        public List<Product> Products { get; set; } = new List<Product>();
+
     }
 }

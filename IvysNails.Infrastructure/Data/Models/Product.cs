@@ -1,5 +1,4 @@
-﻿
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using static IvysNails.Data.DataConstants;
@@ -41,6 +40,8 @@ namespace IvysNails.Infrastructure.Data.Models
 
         [ForeignKey(nameof(ProductCategoryId))]
         public ProductCategory ProductsCategories { get; set; } = null!;
+
+
 
 
     }
