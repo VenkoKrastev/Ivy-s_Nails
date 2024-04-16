@@ -1,4 +1,5 @@
-﻿using IvysNails.Infrastructure.Data.Models.Roles;
+﻿using IvysNails.Infrastructure.Data.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -24,10 +25,10 @@ namespace IvysNails.Infrastructure.Data.Models
         [ForeignKey(nameof(ServiceId))]
         public Service Service { get; set; } = null!;
         
-        public int CustomerId { get; set; }
+        public string CustomerId { get; set; }
 
         [ForeignKey(nameof(CustomerId))]
-        public ApplicationUser Customers { get; set; } = null!;
+        public IdentityUser Customers { get; set; } = null!;
     }
 }
 

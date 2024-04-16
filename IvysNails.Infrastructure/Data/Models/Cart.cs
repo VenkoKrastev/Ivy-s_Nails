@@ -1,7 +1,5 @@
-﻿using IvysNails.Infrastructure.Data.Models.Roles;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IvysNails.Infrastructure.Data.Models
 {
@@ -14,9 +12,9 @@ namespace IvysNails.Infrastructure.Data.Models
         [Comment("The current user's Identifier")]
         public string UserId { get; set; } = null!;
 
-        [ForeignKey(nameof(UserId))]
-        [Comment("The current User")]
-        public ApplicationUser User { get; set; } = null!;
+        //[ForeignKey(nameof(UserId))]
+        //[Comment("The current User")]
+        //public ApplicationUser User { get; set; } = null!;
 
         public ICollection<ProductCart> ProductsCarts { get; set; } = new HashSet<ProductCart>();
 

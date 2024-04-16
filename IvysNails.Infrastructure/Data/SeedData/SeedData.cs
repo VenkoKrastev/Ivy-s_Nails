@@ -1,5 +1,5 @@
 ﻿using IvysNails.Infrastructure.Data.Models;
-using IvysNails.Infrastructure.Data.Models.Roles;
+using IvysNails.Infrastructure.Data.Models;
 using Microsoft.AspNetCore.Identity;
 
 namespace IvysNails.Infrastructure.Data.SeedData
@@ -12,15 +12,15 @@ namespace IvysNails.Infrastructure.Data.SeedData
             SeedProduct();
             SeedProductCategory();
             SeedServices();
-            SeedAdmin();
+            //SeedAdmin();
         }
 
         //Users
-        public ApplicationUser AdminUser { get; set; }
-        public ApplicationUser GuestUser { get; set; }
+        public IdentityUser AdminUser { get; set; }
+        public IdentityUser GuestUser { get; set; }
 
         //Roles
-        public Admin Admin { get; set; }
+        
 
         //Categories of products
         public ProductCategory Shampoo { get; set; } = null!;
@@ -46,43 +46,33 @@ namespace IvysNails.Infrastructure.Data.SeedData
 
         private void SeedUsers()
         {
-            var hasher = new PasswordHasher<ApplicationUser>();
+            var hasher = new PasswordHasher<IdentityUser>();
 
-            AdminUser = new ApplicationUser()
+            AdminUser = new IdentityUser()
             {
                 Id = "c2f14bf7-ffdd-47a4-90b3-f2309486fae9",
                 UserName = "admin@gmail.com",
                 NormalizedUserName = "ADMIN@GMAIL.COM",
                 Email = "admin@gmail.com",
                 NormalizedEmail = "ADMIN@GMAIL.COM",
-                FirstName = "Admin",
-                LastName = "Adminov"
+                //FirstName = "Admin",
+                //LastName = "Adminov"
             };
 
             AdminUser.PasswordHash = hasher.HashPassword(AdminUser, "admin420");
 
-            GuestUser = new ApplicationUser()
+            GuestUser = new IdentityUser()
             {
                 Id = "6d5800ce-d726-4fc8-83d9-d6b3ac1f591e",
                 UserName = "guest@gmail.com",
                 NormalizedUserName = "GUEST@GMAIL.COM",
                 Email = "guest@gmail.com",
                 NormalizedEmail = "GUEST@GMAIL.COM",
-                FirstName = "Guest",
-                LastName = "Guestov"
+                //FirstName = "Guest",
+                //LastName = "Guestov"
             };
 
             GuestUser.PasswordHash = hasher.HashPassword(GuestUser, "guest420");
-        }
-
-        private void SeedAdmin()
-        {
-            Admin = new Admin()
-            {
-                Id = 1,
-                UserId = AdminUser.Id
-            };
-            
         }
 
         private void SeedProductCategory()
