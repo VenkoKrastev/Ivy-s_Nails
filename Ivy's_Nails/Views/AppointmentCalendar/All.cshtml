@@ -1,4 +1,4 @@
-﻿@using IvysNails.Models
+﻿@* @using IvysNails.Models
 @model AppointmentViewModels
 @{
     ViewBag.Title = "All free hour";
@@ -13,13 +13,13 @@
         <div class="card col-4" style="width: 20rem; ">
             <div class="card-body">
                 <h4 class="card-title mt-1">@Model.ServiceId</h4>
-                <h5 class="card-title mt-1">@Model.CustomerId</h5>
+                
                 <h5 class="card-title mt-1">@Model.Date</h5>
                 <p class="mb-0"><span class="fw-bold">Starting Time: </span>@Model.Date</p>
             </div>
 
             <a asp-controller="CalendarController" asp-action="Details" asp-route-id="@Model.Id" class="btn btn-warning mb-2 w-100 p-3 fw-bold">Info</a>
-            @if (User?.Identity?.Name == Model.CustomerId)
+            @if (User?.Identity?.Name == Model.ApplicationUser.FirstName.LastName)
             {
                 <a asp-controller="AppointmentCallendar" asp-action="Edit" asp-route-id="@Model.Id" class="btn btn-warning mb-2 w-100 p-3 fw-bold">Edit</a>
             }
@@ -36,3 +36,4 @@
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
 }
+ *@

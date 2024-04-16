@@ -10,12 +10,12 @@
         private object dateAndTime;
         private object userName;
 
-        public AppointmentViewModels(int id, DateTime date, int serviceId, string customerId)
+        public AppointmentViewModels(int id, DateTime date, int serviceId)
         {
             Id = id;
             Date = date;
             ServiceId = serviceId;
-            CustomerId = customerId;
+            
         }
 
         public AppointmentViewModels(object id1, object topic, object lecturer, object id2, object dateAndTime, object userName)
@@ -34,6 +34,5 @@
 
         public int ServiceId { get; set; }
 
-        public string CustomerId { get; set; }
     }
 }

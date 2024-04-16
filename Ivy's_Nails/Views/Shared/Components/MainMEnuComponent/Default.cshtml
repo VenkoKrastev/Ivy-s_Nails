@@ -1,15 +1,15 @@
-﻿<ul class="navbar-nav flex-grow-1">
+﻿@using IvysNails.Components
+@using Microsoft.AspNetCore.Identity
+
+
+<ul class="navbar-nav flex-grow-1">
     <li class="nav-item">
         <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
     </li>
-    @if (User?.Identity?.IsAuthenticated ?? false)
-    {
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Index">Продукти</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link text-dark" asp-area="" asp-controller="CalendarController" asp-action="Appointment">Запазване на час</a>
-        </li>
-    }
-
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="All">Продукти</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link text-dark" asp-area="" asp-controller="CalendarController" asp-action="Appointment">Запазване на час</a>
+    </li>
 </ul>

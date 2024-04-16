@@ -7,7 +7,7 @@ namespace IvysNails.Infrastructure.Data.Models
     public class ProductCart
     {
         [Required]
-        [Comment("The current Book's Identifier")]
+        [Comment("The current Product's Identifier")]
         public int ProductId { get; set; }
 
         [ForeignKey(nameof(ProductId))]

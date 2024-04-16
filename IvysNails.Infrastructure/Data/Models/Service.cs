@@ -14,7 +14,7 @@ namespace IvysNails.Infrastructure.Data.Models
 
         [Required]
         [MaxLength(ServiceNameMaxLength)]
-        [Comment("The name of the service offered")]
+        [Comment("The name of the service")]
         public string Name { get; set; } = null!;
 
         [Required]

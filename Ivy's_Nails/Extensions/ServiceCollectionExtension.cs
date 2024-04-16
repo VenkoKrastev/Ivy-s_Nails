@@ -1,4 +1,7 @@
-﻿using IvysNails.Infrastructure.Data;
+﻿using IvysNails.Core.Contracts;
+using IvysNails.Core.Services;
+using IvysNails.Infrastructure.Data;
+using IvysNails.Infrastructure.Data.Common;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,6 +11,7 @@ namespace Microsoft.Extensions.DependencyInjection
     {
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
+            services.AddScoped<IProductService, ProductService>();
             return services;
         }
 
@@ -17,18 +21,26 @@ namespace Microsoft.Extensions.DependencyInjection
             services.AddDbContext<IvyNailsDbContext>(options =>
                 options.UseSqlServer(connectionString));
 
-            services.AddDatabaseDeveloperPageExceptionFilter();
+            services.AddScoped<IRepository, Repository>();
 
+            services.AddDatabaseDeveloperPageExceptionFilter();
 
             return services;
         }
 
         public static IServiceCollection AddApplicationIdentity(this IServiceCollection services, IConfiguration config)
         {
-            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+            services.AddDefaultIdentity<IdentityUser>(options =>
+            {
+              options.SignIn.RequireConfirmedAccount = false;
+              options.Password.RequireNonAlphanumeric = false;
+              options.Password.RequireDigit = false;
+              options.Password.RequireUppercase = false;
+            })
+                
                 .AddEntityFrameworkStores<IvyNailsDbContext>();
 
             return services;
         }
-    }
+}
 }
