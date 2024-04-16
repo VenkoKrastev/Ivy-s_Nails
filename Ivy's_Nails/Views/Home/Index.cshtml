@@ -19,12 +19,32 @@
             @if (User?.Identity?.IsAuthenticated ?? false)
             {
                 <a asp-controller="AppointmentCalendar" asp-action="Add" class="btn btn-primary btn-lg" role="button">Запази час</a>
+
+                <script>
+                    document.getElementById("save-appointment-button").addEventListener("click", function () {
+                        window.location.href = "/CalendarController/Appointment";
+                    });
+                </script>
             }
         </p>
     </div>
 }
 
 <div class="mb-5"></div>
+
+
+<style>
+    /* Примерни стилове за карусела */
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+        background-color: red; /* Цвят на курсорите */
+    }
+
+        .carousel-control-prev-icon:after,
+        .carousel-control-next-icon:after {
+            color: white; /* Цвят на стрелките на курсорите */
+        }
+</style>
 
 <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
