@@ -1,4 +1,5 @@
 ﻿using Ivy_s_Nails.Models;
+using IvysNails.Core.Models.ViewModels.Product;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
@@ -26,7 +27,8 @@ namespace Ivy_s_Nails.Controllers
             {
                 return View("Error401");
             }
-            return View();
+            var model = new ProductViewModel();
+            return View(model);
         }
 
         [AllowAnonymous]
