@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IvysNails.Core.Models.ViewModels.Product
 {
-    public class ProductViewModel
+    public class IndexViewModel
     {
     }
 }
