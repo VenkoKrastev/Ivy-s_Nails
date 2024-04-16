@@ -11,7 +11,7 @@ namespace IvysNails.Controllers
     {
         private readonly UserManager<IdentityUser> _userManager;
         private readonly SignInManager<IdentityUser> _signInManager;
-        private readonly IvyNailsDbContext _dbContext; // Вашият контекст на базата данни
+        private readonly IvyNailsDbContext _dbContext; 
 
         public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager, IvyNailsDbContext dbContext)
         {

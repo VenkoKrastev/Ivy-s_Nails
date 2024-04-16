@@ -1,4 +1,5 @@
 ﻿using Ivy_s_Nails.Models;
+using IvysNails.Core.Contracts;
 using IvysNails.Core.Models.ViewModels.Product;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -9,14 +10,18 @@ namespace Ivy_s_Nails.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly IProductService productService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(
+            ILogger<HomeController> logger,
+            IProductService _productService)
         {
             _logger = logger;
+            productService = _productService;
         }
 
         [AllowAnonymous]
-        public IActionResult Index(int statusCode)
+        public async Task<IActionResult> Index(int statusCode)
         {
             if (statusCode == 400)
             {
@@ -27,7 +32,7 @@ namespace Ivy_s_Nails.Controllers
             {
                 return View("Error401");
             }
-            var model = new ProductViewModel();
+            var model = await productService.LastThreeProduct();
             return View(model);
         }
 
