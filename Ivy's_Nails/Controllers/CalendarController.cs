@@ -1,5 +1,4 @@
 ﻿using IvysNails.Infrastructure.Data;
-using IvysNails.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IvysNails.Controllers
