@@ -1,4 +1,4 @@
-﻿namespace IvysNails.Data
+﻿namespace IvysNails.Infrastructure.Data
 {
     public static class DataConstants
     {
@@ -10,6 +10,9 @@
 
         public const int ProductImageUrlMinLength = 5;
         public const int ProductImageUrlMaxLength = 1000;
+
+        public const string ProductPriceMinValue = "1";
+        public const string ProductPriceMaxValue = "10000";
 
         public const int CustomerNameMinLength = 3;
         public const int CustomerNameMaxLength = 50;
@@ -31,6 +34,9 @@
 
         public const int ApplicationUserLastNameMinLength = 1;
         public const int ApplicationUserLastNameMaxLength = 30;
+
+        public const string LengthErrorMessage = "{0} must be between {2} and {1} characters long!";
+        public const string RangeErrorMessage = "{0} must be a number between {1} and {2}!";
 
     }
 }
