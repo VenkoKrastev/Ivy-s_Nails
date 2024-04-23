@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
-using static IvysNails.Data.DataConstants;
+using static IvysNails.Infrastructure.Data.DataConstants;
 
 namespace IvysNails.Infrastructure.Data.Models
 {

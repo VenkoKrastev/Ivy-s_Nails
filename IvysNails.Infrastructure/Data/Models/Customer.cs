@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using static IvysNails.Data.DataConstants;
+using static IvysNails.Infrastructure.Data.DataConstants;
 
 
 namespace IvysNails.Infrastructure.Data.Models

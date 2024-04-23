@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using static IvysNails.Data.DataConstants;
+using static IvysNails.Infrastructure.Data.DataConstants;
 
 namespace IvysNails.Infrastructure.Data.Models
 {
@@ -17,7 +17,6 @@ namespace IvysNails.Infrastructure.Data.Models
         public string Name { get; set; } = null!;
 
         [Required]
-        [Precision(18, 2)]
         [Comment("The current Products Price")]
         public decimal Price { get; set; }
 
