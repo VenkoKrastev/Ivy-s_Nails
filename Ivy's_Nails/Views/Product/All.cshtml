@@ -1,4 +1,5 @@
-﻿ @model IEnumerable<IvysNails.Infrastructure.Data.Models.Product>
+﻿@using System.Security.Claims
+ @model IEnumerable<IvysNails.Infrastructure.Data.Models.Product>
 
 @{
     ViewBag.Title = "Всики продукти";
@@ -27,17 +28,27 @@
                 Цена: @Html.DisplayFor(modelItem => product.Price) лева <br />
                 Наличност: @Html.DisplayFor(modelItem => product.StockQuantity) бр.
             </td>
-            @* <td>
-                <button class="btn btn-info show-details">Детайли</button>
-                <div class="details" style="display:none;">@Html.DisplayFor(modelItem => product.Details)</div>
-            </td> *@
+            
         </tr>
     }
 
 </div>
 
 
-<div>
-    @Html.ActionLink("Create New", "Create")
-</div>
+@{
 
+    string desiredUserId = "c2f14bf7-ffdd-47a4-90b3-f2309486fae9";
+
+
+    var userId = (User.Identity.IsAuthenticated) ? User.FindFirstValue(ClaimTypes.NameIdentifier) : null;
+
+
+    bool isDesiredUser = (userId == desiredUserId);
+}
+
+@if (isDesiredUser)
+{
+    <form asp-area="" asp-controller="Product" asp-action="Add" method="get">
+        <button type="submit" class="btn btn-primary">Create New</button>
+    </form>
+}
