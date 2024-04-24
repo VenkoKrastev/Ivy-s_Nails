@@ -1,5 +1,4 @@
-﻿
- @model IEnumerable<IvysNails.Infrastructure.Data.Models.Product>
+﻿ @model IEnumerable<IvysNails.Infrastructure.Data.Models.Product>
 
 @{
     ViewBag.Title = "Всики продукти";
@@ -13,8 +12,6 @@
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
-        <!-- Add other headers like Image, Price, etc. -->
-        <th></th>
     </tr>
 
     @foreach (var product in Model)
@@ -24,10 +21,11 @@
                 @Html.DisplayFor(modelItem => product.Name)
             </td>
             <td>
-                <img src="@product.ImageUrl" alt="Product Image" style="max-width: 250px; max-height: 250;" />
+                <img src="@product.ImageUrl" alt="Product Image" style="max-width: 250px; max-height: 250px;" />
             </td>
             <td>
-                Цена: @Html.DisplayFor(modelItem => product.Price) лева
+                Цена: @Html.DisplayFor(modelItem => product.Price) лева <br />
+                Наличност: @Html.DisplayFor(modelItem => product.StockQuantity) бр.
             </td>
             @* <td>
                 <button class="btn btn-info show-details">Детайли</button>
@@ -36,15 +34,6 @@
         </tr>
     }
 
-   @*  @section Scripts {
-        <script>
-            $(document).ready(function () {
-                $(".show-details").click(function () {
-                    $(this).siblings(".details").toggle();
-                });
-            });
-        </script> *@
-    }
 </div>
 
 

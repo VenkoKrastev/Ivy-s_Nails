@@ -1,0 +1,30 @@
+﻿@model Cart
+
+<h2>Количка</h2>
+
+@if (Model.ProductsCarts.Count == 0)
+{
+    <p>Количката ви е празна.</p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Име</th>
+                <th>Цена</th>
+                <th>Количество</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var productCart in Model.ProductsCarts)
+            {
+                <tr>
+                    <td>@productCart.Product.Name</td>
+                    <td>@productCart.Product.Price лв.</td>
+                    <td>@productCart.Product.StockQuantity</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
