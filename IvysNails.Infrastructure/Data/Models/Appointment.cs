@@ -27,7 +27,7 @@ namespace IvysNails.Infrastructure.Data.Models
         public string CustomerId { get; set; }
 
         [ForeignKey(nameof(CustomerId))]
-        public IdentityUser Customers { get; set; } = null!;
+        public ApplicationUser Customers { get; set; } = null!;
     }
 }
 

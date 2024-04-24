@@ -16,6 +16,8 @@ namespace IvysNails.Infrastructure.Data.Models
         //[Comment("The current User")]
         //public ApplicationUser User { get; set; } = null!;
 
+
+
         public ICollection<ProductCart> ProductsCarts { get; set; } = new HashSet<ProductCart>();
 
     }
