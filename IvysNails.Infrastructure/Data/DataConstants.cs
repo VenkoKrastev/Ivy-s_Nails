@@ -11,7 +11,7 @@
         public const int ProductImageUrlMinLength = 5;
         public const int ProductImageUrlMaxLength = 1000;
 
-        public const string ProductPriceMinValue = "1";
+        public const string ProductPriceMinValue = "0";
         public const string ProductPriceMaxValue = "10000";
 
         public const int CustomerNameMinLength = 3;

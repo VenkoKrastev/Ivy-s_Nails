@@ -5,8 +5,9 @@
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
+    using System.Reflection.Emit;
 
-    public class IvyNailsDbContext : IdentityDbContext<IdentityUser>
+    public class IvyNailsDbContext : IdentityDbContext<ApplicationUser>
     {
         public IvyNailsDbContext(DbContextOptions<IvyNailsDbContext> options)
             : base(options) { }
@@ -36,6 +37,7 @@
             builder.Entity<Product>()
                 .Property(p => p.Price)
                 .HasPrecision(18, 2);
+
 
             //Configuration (Data Seeding)
             builder.ApplyConfiguration(new ProductConfiguration());

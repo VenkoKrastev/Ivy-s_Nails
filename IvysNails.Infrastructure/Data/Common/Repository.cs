@@ -1,15 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using IvysNails.Infrastructure.Data.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace IvysNails.Infrastructure.Data.Common
 {
     public class Repository : IRepository
     {
-        private readonly DbContext context;
+        private readonly IvyNailsDbContext context;
 
         public Repository(IvyNailsDbContext _context)
         {
@@ -26,9 +22,39 @@ namespace IvysNails.Infrastructure.Data.Common
             return DbSet<T>();
         }
 
+        public async Task<int> SaveChangesAsync()
+        {
+            return await context.SaveChangesAsync();
+        }
+
+        public async Task AddAsync<T>(T entity) where T : class
+        {
+            await DbSet<T>().AddAsync(entity);
+        }
+
+        public async Task<T?> GetByIdAsync<T>(object id) where T : class
+        {
+            return await DbSet<T>().FindAsync(id);
+        }
+
         public IQueryable<T> AllReadOnly<T>() where T : class
         {
             return DbSet<T>().AsNoTracking();
+        }
+
+        public Product GetProduct(int productId)
+        {
+            return context.Products.FirstOrDefault(p => p.Id == productId);
+        }
+
+        public async Task DeleteAsync<T>(object id) where T : class
+        {
+            T? entity = await GetByIdAsync<T>(id);
+
+            if (entity != null)
+            {
+                DbSet<T>().Remove(entity);
+            }
         }
     }
 }
